@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kółko i krzyżyk</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+
+.column {
+  float: left;
+  width: 10%;
+  padding: 1px;
+  height: 120px; /* Should be removed. Only for demonstration */
+  background-color: #8dcee4;
+  font-size: 100px;
+  color:rgb(255, 255, 255);
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: left;
+ 
+
+}
+.uklad{
+  position: relative;
+  top:30px;
+  left:-701px;
+}
+.box{
+  position: relative;
+  width: 15%;
+  
+  height: 30px; 
+  top: -220px;
+  left: 990px;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:28px;
+	font-weight:bold;
+
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+  font-family:Arial;
+	font-size:28px;
+	font-weight:bold;
+
+  text-align: center;
+
+ 
+}
+.box2{
+  position: relative;
+  width: 300px;
+
+  
+  height: 30px; 
+  top: -400px;
+  left: 1220px;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:28px;
+	font-weight:bold;
+
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+  font-family:Arial;
+	font-size:28px;
+	font-weight:bold;
+ 
+  
+ 
+}
+
+.box2:hover {
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+}
+
+
+        
+body{
+  background-image: url("https://media.istockphoto.com/vectors/tic-tac-toe-school-game-colorful-seamless-pattern-for-fabric-and-on-vector-id1292919739?k=20&m=1292919739&s=612x612&w=0&h=3tcAnbVokO9kdKAa3xVqanBdSaMIMGjOH-lLG17iGm4=");
+  opacity: 1;
+}
+h2{
+  font-family: "Lucida Console", "Courier New", monospace;
+  position:absolute;
+  left:110px;
+  top:-70px;
+  background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:28px;
+	font-weight:bold;
+ 
+
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.srodek{
+  position: relative;
+  top:60px;
+  left:440px;
+
+}
+
+
+
+</style>
+</head>
+<body>
+
+  <script>
+  var licznik=3;
+  var array=[9,9,9,9,9,9,9,9,9];
+  var bool=false;
+
+
+  function myFunction(param) {
+
+
+
+  let krzyzyk="x";
+  let kolko="o";
+
+
+
+  if(licznik%2==0)
+  {
+
+    var k=parseInt(param)
+    if(array[k]==9){
+
+      array[k]=kolko
+      var pole= document.getElementById(param).innerHTML =kolko;
+      licznik=licznik+1;
+
+
+      
+    }
+    
+    
+
+  }
+  else{
+    var k=parseInt(param)
+    if(array[k]==9){
+      array[k]=krzyzyk
+      var pole= document.getElementById(param).innerHTML =krzyzyk;
+      licznik=licznik+1;
+    }
+  
+  }
+
+  if((array[0]=="o"&&array[1]=="o"&&(array[2]=="o")) ||(array[3]=="o"&&array[4]=="o"&&(array[5]=="o")) ||(array[6]=="o"&&array[7]=="o"&&(array[8]=="o"))
+  ||(array[0]=="o"&&array[3]=="o"&&(array[6]=="o"))||(array[1]=="o"&&array[4]=="o"&&(array[7]=="o"))||(array[2]=="o"&&array[5]=="o"&&(array[8]=="o"))
+  ||(array[0]=="o"&&array[4]=="o"&&(array[8]=="o"))||(array[2]=="o"&&array[4]=="o"&&(array[6]=="o")) )
+  {
+    var x = document.getElementById("9");
+    if(x.style.display = "none" && bool==false)
+    {
+    var win= document.getElementById("9").innerHTML ="Wygrało koło";
+    bool=true;
+    x.style.display = "block";
+    }
+
+  }
+  if((array[0]=="x"&&array[1]=="x"&&(array[2]=="x")) ||(array[3]=="x"&&array[4]=="x"&&(array[5]=="x")) ||(array[6]=="x"&&array[7]=="x"&&(array[8]=="x"))
+  ||(array[0]=="x"&&array[3]=="x"&&(array[6]=="x"))||(array[1]=="x"&&array[4]=="x"&&(array[7]=="x"))||(array[2]=="x"&&array[5]=="x"&&(array[8]=="x"))
+  ||(array[0]=="x"&&array[4]=="x"&&(array[8]=="x"))||(array[2]=="x"&&array[4]=="x"&&(array[6]=="x")))
+  {
+    var x = document.getElementById("9");
+    if(x.style.display = "none" && bool==false)
+    {
+
+    x.style.display = "block";
+    var win= document.getElementById("9").innerHTML ="Wygrał krzyżyk";
+    bool=true;
+    x.style.display = "block";
+  
+    }
+
+    
+  }
+
+  
+
+
+
+
+
+
+
+    
+  }
+  </script>
+
+  <div class="srodek"> 
+    <div class="background">
+      <h2>KÓŁKO I KRZYŻYK</h2>
+
+      <div class="row">
+      <button class="column" id="0" onclick="myFunction(0) " >
+
+      </button>
+      <button class="column" id="1" onclick="myFunction(1)" >
+      
+      </button>
+      <button class="column" id="2" onclick="myFunction(2)" >
+      
+      </button>
+      </div>
+      <div class="row">
+        <button class="column" id="3" onclick="myFunction(3)" >
+      
+        </button>
+      <button class="column" id="4" onclick="myFunction(4)" >
+      
+      </button>
+      <button class="column" id="5" onclick="myFunction(5)" >
+      
+      </button>
+      </div>
+      <div class="row">
+        <button class="column" id="6" onclick="myFunction(6)" >
+      
+      </button>
+      <button class="column" id="7" onclick="myFunction(7)" >
+      
+      </button>
+      <button class="column" id="8" onclick="myFunction(8)" >
+      
+      </button>
+      </div>
+
+      <div class="uklad">
+
+
+      <button class="box2" id="10" onclick="window.location.reload(true)">RESET
+      </button>
+
+        <div class="box" >
+        <div id="9"> </div>
+      </div>
+   </div>
+	 </div>
+   </div>
+</body>
+
+</html>
