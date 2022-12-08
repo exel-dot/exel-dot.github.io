@@ -9,7 +9,6 @@ const routes = {
     "/": "/pages/home.html",
     "/pages/link2.html": "/pages/link2.html",
     "/pages/link3.html": "/pages/link3.html",
-    "/pages/link4.html": "/pages/link4.html",
     "/index.html": "/pages/home.html",
 };
 
